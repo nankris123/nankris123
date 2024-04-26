@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html  lang="en"
+<head>
+<meta charset="UTF-8">
+<title>input biodata</title>
+</head>
+<body>
+
+<h1>bio</h1>
+<form id="forminput">
+	<label> masukkan nama:</label>
+	<input type="text" id="nama">
+	<br>
+	<label>masukkan kelas:</label>
+	<input type="text" id="kelas">
+	<br>
+	<label>masukkan absen:</label>
+	<input type="number" id="absen">
+	<br>
+	<label>masukkan no hp:</label>
+	<input type="number" id="no">
+	<br>
+	<label>tempat lahir:</label>
+	<input type="text" id="tempat">
+	<br>
+	<label>tanggal lahir:</label>
+	<input type="date" id="ttl">
+	<br>
+	
+	<button onclick="tampilkanhasil()">save</button>
+</form>
+<script>
+function tampilkanhasil() {
+	var nama = document.getElementById("nama").value;
+	var kelas = document.getElementById("kelas").value;
+	var absen = document.getElementById("absen").value;
+	var no = document.getElementById("no").value;
+	var tempat = document.getElementById("tempat").value;
+	var ttl = document.getElementById("ttl").value;
+	var date = new Date(ttl);
+	var options = { day: 'numeric', month: 'long', year: 'numeric' };
+	var tanggalString = date.toLocaleDateString('id-ID', options);
+	document.write("<h1>bio</h1>");
+	document.write("<p>nama : "+nama+"</p>");
+	document.write("<p>kelas : "+kelas+"</p>");
+	document.write("<p>absen : "+absen+"</p>");
+	document.write("<p>no : "+no+"</p>");
+	document.write("<p>tempat, tanggal lahir,: "+tempat+", "+tanggalString+"</p>");
+}
+</script>
+</body>
+</html>
